@@ -172,7 +172,7 @@
      */
     var open = function(uri) {
         if (!isMobile()) {
-            return;
+            settings.callback && settings.callback();
         }
 
         if (isAndroid() && !navigator.userAgent.match(/Firefox/)) {

@@ -171,7 +171,7 @@
      * @param {String} Deeplink URI
      */
     var open = function(uri) {
-        if (!isMobile() || isAndroid()) {
+        if (!isIOS()) {
             settings.callback && settings.callback();
         }
 

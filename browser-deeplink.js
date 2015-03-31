@@ -171,14 +171,8 @@
      * @param {String} Deeplink URI
      */
     var open = function(uri) {
-        if (!isMobile()) {
+        if (!isMobile() || isAndroid()) {
             settings.callback && settings.callback();
-        }
-
-        if (isAndroid() && !navigator.userAgent.match(/Firefox/)) {
-            var matches = uri.match(/([^:]+):\/\/(.+)$/i);
-            uri = "intent://" + matches[2] + ";package=" + settings.android.appId;
-            uri += "#Intent;scheme=" + matches[1] + ";end;";
         }
 
         if (settings.fallback) {

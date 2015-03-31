@@ -173,6 +173,7 @@
     var open = function(uri) {
         if (!isIOS()) {
             settings.callback && settings.callback();
+            return;
         }
 
         if (settings.fallback) {
